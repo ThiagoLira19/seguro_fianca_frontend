@@ -67,8 +67,8 @@ function enviarDados() {
     const telefoneLocatario = document.getElementById('telefone_locatario').value;
     const cepLocatario = document.getElementById('cep_locatario').value;
     const logradouroLocatario = document.getElementById('logradouro_locatario').value;
-    const numeroLogradouroLocatario = document.getElementById('numero_logradouro_locatario').value;
-    const complementoLogradouroLocatario = document.getElementById('complemento_logradouro_locatario').value;
+    const numeroLogradouroLocatario = document.getElementById('numero_locatario').value;
+    const complementoLogradouroLocatario = document.getElementById('complemento_locatario').value;
     const cidadeLocatario = document.getElementById('cidade_locatario').value;
     const estadoLocatario = document.getElementById('estado_locatario').value;
 
@@ -78,32 +78,32 @@ function enviarDados() {
     const telefoneLocador = document.getElementById('telefone_locador').value;
     const cepLocador = document.getElementById('cep_locador').value;
     const logradouroLocador = document.getElementById('logradouro_locador').value;
-    const numeroLogradouroLocador = document.getElementById('numero_logradouro_locador').value;
-    const complementoLogradouroLocador = document.getElementById('complemento_logradouro_locador').value;
+    const numeroLogradouroLocador = document.getElementById('numero_locador').value;
+    const complementoLogradouroLocador = document.getElementById('complemento_locador').value;
     const cidadeLocador = document.getElementById('cidade_locador').value;
     const estadoLocador = document.getElementById('estado_locador').value;
 
     const cepRisco = document.getElementById('cep_risco').value;
     const logradouroRisco = document.getElementById('logradouro_risco').value;
-    const numeroLogradouroRisco = document.getElementById('numero_logradouro_risco').value;
+    const numeroLogradouroRisco = document.getElementById('numero_risco').value;
     const complementoRisco = document.getElementById('complemento_risco').value;
     const cidadeRisco = document.getElementById('cidade_risco').value;
     const estadoRisco = document.getElementById('estado_risco').value;
 
-    const dataInicioVigencia = document.getElementById('data_inicio_vigencia').value;
-    const dataFimVigencia = document.getElementById('data_fim_vigencia').value;
-    const periodo = document.getElementById('periodo').value;
+    const dataInicioVigencia = document.getElementById('inicioVigencia').value;
+    const dataFimVigencia = document.getElementById('fimVigencia').value;
+    const periodo = document.getElementById('periodoMeses').value;
 
-    const isAluguel = document.getElementById('is_aluguel').value;
-    const isIptu = document.getElementById('is_iptu').value;
-    const isCondominio = document.getElementById('is_condominio').value;
-    const isAgua = document.getElementById('is_agua').value;
-    const isEnergiaEletrica = document.getElementById('is_energia_eletrica').value;
-    const isGas = document.getElementById('is_gas').value;
-    const isDanosImovel = document.getElementById('is_danos_imovel').value;
-    const isPinturaInterna = document.getElementById('is_pintura_interna').value;
-    const isPinturaExterna = document.getElementById('is_pintura_externa').value;
-    const isMultaRecisoria = document.getElementById('is_multa_recisoria').value;
+    const isAluguel = document.getElementById('valorAluguel').value;
+    const isIptu = document.getElementById('valorIptu').value;
+    const isCondominio = document.getElementById('valorCondominio').value;
+    const isAgua = document.getElementById('valorAgua').value;
+    const isEnergiaEletrica = document.getElementById('valorEnergiaEletrica').value;
+    const isGas = document.getElementById('valorGas').value;
+    const isDanosImovel = document.getElementById('valorDanosImovel').value;
+    const isPinturaInterna = document.getElementById('valorPinturaInterna').value;
+    const isPinturaExterna = document.getElementById('valorPinturaExterna').value;
+    const isMultaRecisoria = document.getElementById('valorMultaRecisoria').value;
 
     // Criar o objeto com os dados
     const dados = {
