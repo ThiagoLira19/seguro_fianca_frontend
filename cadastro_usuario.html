@@ -1,0 +1,104 @@
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Seguro Fiança</title>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      <div class="d-flex justify-content-between align-items-center p-4 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <div class="brand"><img src="images/allianz-logo.png" width="122" height="30"></div>
+            <div class="small text-muted">
+              <div class="fw-semibold"></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <div class="small text-end text-muted">
+              <div class="fw-semibold">Versão 1.00</div>
+              <div>Seguro Fiança</div>
+            </div>
+          </div>
+      </div>
+
+    <div class="container py-2">
+      <div class="card-main"><!-- HEADER -->
+      <!-- CONTENT -->
+      <div class="p-4">
+
+        <!-- STEPS -->
+        <div class="row text-center mb-4">
+          <h1 class="text-center"><b>Cadastro de usuário</b></h1>
+        </div>
+
+        <!-- FORM -->
+        <div class="mb-4">
+          <div class="row g-3">
+            <div>
+              <input type="text" class="form-control" placeholder="Nome completo" required>
+            </div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="row g-3">
+            <div>
+              <input type="text" class="form-control" placeholder="E-mail" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4"> 
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Telefone contato" required>
+            </div>
+            <div class="col-md-6">
+              <select class="form-select" aria-label="Default select example" required>
+                <option value="" disabled selected>Selecione o Tipo de Conta</option>
+                <option value="1">Usuário</option>
+                <option value="2">Administrador</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="password" class="form-control" placeholder="Senha" required>
+            </div>
+            <div class="col-md-6">
+              <input type="password" class="form-control" placeholder="Confirme a senha" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-main">
+          <div class="p-4">
+            <div class="mb-4">
+              <!-- Flexbox para alinhar os botões -->
+              <div class="d-flex justify-content-between">
+                <!-- Botão à esquerda -->
+                <button class="btn btn-primary btn-lg" style="width: 200px; height: 60px;">Cadastrar</button>
+                <!-- Botão à direita -->
+                <a href="index.html" class="text-decoration-none d-flex align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a1 1 0 0 1-1 1H5.414l3.293 3.293a1 1 0 0 1-1.414 1.414l-4.999-5a1 1 0 0 1 0-1.414l5-5a1 1 0 0 1 1.414 1.414L5.414 7H14a1 1 0 0 1 1 1z"/>
+                  </svg>&nbsp;&nbsp;
+                  <b>Voltar</b>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

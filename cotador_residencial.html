@@ -1,0 +1,367 @@
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Seguro Fiança</title>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      <div class="d-flex justify-content-between align-items-center p-4 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <div class="brand"><img src="images/allianz-logo.png" width="122" height="30"></div>
+            <div class="small text-muted">
+              <div class="fw-semibold"></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <div class="small text-end text-muted">
+              <div class="fw-semibold">Versão 1.00</div>
+              <div>Seguro Fiança</div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <div class="rounded-circle border d-flex align-items-center justify-content-center" style="width:40px;height:40px;">👤</div>
+              <div class="small fw-medium">TEST CORRETORA</div>
+            </div>
+          </div>
+      </div>
+      <!-- NAV -->
+      <div class="d-flex gap-4 px-4 py-3 nav-top border-bottom small">
+          <div class="container d-flex gap-4">
+            <div class="nav-item active"><a href="">LOCAÇÃO RESIDENCIAL</a></div>
+            <div class="nav-item"><a href="simulador"> LOCAÇÃO COMERCIAL</a></div>
+          </div>
+      </div>
+
+    <div class="container py-2">
+      <div class="card-main"><!-- HEADER -->
+      <!-- CONTENT -->
+      <div class="p-4">
+
+        <!-- BREADCRUMB -->
+        <div class="text-muted small mb-3">Cotação &gt; Residencial</div>
+
+        <!-- STEPS -->
+        <div class="row text-center mb-4">
+          <div class="col step active">1. Dados gerais e coberturas</div>
+          <div class="col step">2. Definição de forma</div>
+          <div class="col step">3. Informações de crédito</div>
+          <div class="col step">4. Confirmação</div>
+        </div>
+
+        <!-- FORM -->
+        <div class="mb-4">
+          <div class="section-title mb-3">Dados do locatário</div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="CPF do locatário" id="cpf_locatario">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Nome completo" id="nome_locatario">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="E-mail do locatário" id="nome_locatario">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Telefone do locatário" id="nome_locatario">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <input type="number" class="form-control" placeholder="CEP do locatário" id="cep_locatario" onblur="buscarEnderecoLocatario()">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_locatario" disabled>
+            </div>
+            <div class="col-md-4">
+              <input type="number" class="form-control" placeholder="Número do locatário">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Complemento logradouro" id="complemento_locatario">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Cidade do locatário" id="cidade_locatario" disabled>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Estado do locatário" id="estado_locatario" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4 border rounded p-4 bg-light">
+          <div class="section-title mb-3">Dados do Locador</div>
+          
+          <!-- Primeiro Grupo -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="CPF do locador">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Nome completo">
+            </div>
+          </div>
+
+          <!-- Segundo Grupo -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="E-mail do locador">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Telefone do locador">
+            </div>
+          </div>
+
+          <!-- Terceiro Grupo -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-4">
+              <input type="number" class="form-control" placeholder="CEP do locador" id="cep_locador" onblur="buscarEnderecoLocador()">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_locador" disabled>
+            </div>
+            <div class="col-md-4">
+              <input type="number" class="form-control" placeholder="Número locador">
+            </div>
+          </div>
+
+          <!-- Quarto Grupo -->
+          <div class="row g-3">
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Complemento logradouro" id="complemento_locador">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Cidade do locador" id="cidade_locador" disabled>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Estado do locador" id="estado_locador" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="section-title mb-3">Dados do Imóvel</div>
+          
+          <!-- Primeiro Grupo -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-4">
+              <input type="number" class="form-control" placeholder="CEP" id="cep_imovel" onblur="buscarEnderecoImovel()">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_imovel" disabled>
+            </div>
+            <div class="col-md-4">
+              <input type="number" class="form-control" placeholder="Número">
+            </div>
+          </div>
+
+          <!-- Segundo Grupo -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Complemento logradouro">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Cidade do Imóvel" id="cidade_imovel" disabled>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Estado do Imóvel" id="estado_imovel" disabled>
+            </div>
+          </div>
+
+          <!-- Terceiro Grupo -->
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="input-group">
+                <span class="input-group-text">R$</span>
+                <input type="text" class="form-control currency" placeholder="Valor do aluguel" id="valorAluguel">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <input type="number" class="form-control" placeholder="Período do aluguel (em meses)" id="periodoMeses">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4 border rounded p-3 bg-light"> 
+          <div class="section-title mb-3">Inicio da Vigência</div>
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <input type="date" class="form-control" id="inicioVigencia">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Fim da vigência" id="fimVigencia" disabled>
+            </div>
+          </div>
+        </div>
+
+
+          <div class="mb-4">
+  <div class="section-title mb-3">Coberturas</div>
+
+  <!-- Repetição de Itens -->
+  <div class="row mb-3 align-items-center">
+    <!-- Checkbox -->
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="danosImovel" value="danosImovel">
+        <label class="form-check-label" for="danosImovel">Danos ao Imóvel</label>
+      </div>
+    </div>
+    <!-- Input -->
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorDanosImovel">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3 align-items-center">
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="iptu" value="iptu">
+        <label class="form-check-label" for="iptu">IPTU</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorIptu">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3 align-items-center">
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="condominio" value="condominio">
+        <label class="form-check-label" for="condominio">Condomínio</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorCondominio">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3 align-items-center">
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="agua" value="agua">
+        <label class="form-check-label" for="agua">Água</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorAgua">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3 align-items-center">
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="energia" value="energia">
+        <label class="form-check-label" for="energia">Energia Elétrica</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorEnergia">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3 align-items-center">
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="gas" value="gas">
+        <label class="form-check-label" for="gas">Gás</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorGas">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3 align-items-center">
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="pinturaInterna" value="pinturaInterna">
+        <label class="form-check-label" for="pinturaInterna">Pintura Interna</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorPinturaInterna">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3 align-items-center">
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="pinturaExterna" value="pinturaExterna">
+        <label class="form-check-label" for="pinturaExterna">Pintura Externa</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorPinturaExterna">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3 align-items-center">
+    <div class="col-12 col-md-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="multaRecisoria" value="multaRecisoria">
+        <label class="form-check-label" for="multaRecisoria">Multa Rescisória</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="input-group">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorMultaRecisoria">
+      </div>
+    </div>
+  </div>
+</div>
+      <br>
+      <br>
+      <!-- Botão de Enviar -->
+      <div class="text-left">
+        <button type="button" class="btn btn-primary btn-lg" id="btn-enviar" onclick="enviarDados()">Solicitar Cotação</button>
+      </div>
+
+      </div>
+
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
