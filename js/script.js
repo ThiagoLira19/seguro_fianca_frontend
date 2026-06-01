@@ -60,97 +60,341 @@
 
   // Função para enviar os dados via POST
 function enviarDados() {  
+
     // Selecionar os campos do formulário
-    const cpfLocatario = document.getElementById('cpf_locatario').value;
-    const nomeLocatario = document.getElementById('nome_locatario').value;
-    const emailLocatario = document.getElementById('email_locatario').value;
-    const telefoneLocatario = document.getElementById('telefone_locatario').value;
-    const cepLocatario = document.getElementById('cep_locatario').value;
-    const logradouroLocatario = document.getElementById('logradouro_locatario').value;
-    const numeroLogradouroLocatario = document.getElementById('numero_locatario').value;
-    const complementoLogradouroLocatario = document.getElementById('complemento_locatario').value;
-    const cidadeLocatario = document.getElementById('cidade_locatario').value;
-    const estadoLocatario = document.getElementById('estado_locatario').value;
+    const TipoSeguro = document.getElementById('Tipo_Seguro').value;
+    const Tipolocacao = document.getElementById('tipo_locacao').value;
 
-    const nomeLocador = document.getElementById('nome_locador').value;
-    const cpfLocador = document.getElementById('cpf_locador').value;
-    const emailLocador = document.getElementById('email_locador').value;
-    const telefoneLocador = document.getElementById('telefone_locador').value;
-    const cepLocador = document.getElementById('cep_locador').value;
-    const logradouroLocador = document.getElementById('logradouro_locador').value;
-    const numeroLogradouroLocador = document.getElementById('numero_locador').value;
-    const complementoLogradouroLocador = document.getElementById('complemento_locador').value;
-    const cidadeLocador = document.getElementById('cidade_locador').value;
-    const estadoLocador = document.getElementById('estado_locador').value;
+    const cpfLocatario = document.getElementById('cpf_locatario');
+    const nomeLocatario = document.getElementById('nome_locatario');
+    const emailLocatario = document.getElementById('email_locatario');
+    const telefoneLocatario = document.getElementById('telefone_locatario');
+    const cepLocatario = document.getElementById('cep_locatario');
+    const logradouroLocatario = document.getElementById('logradouro_locatario');
+    const numeroLogradouroLocatario = document.getElementById('numero_locatario');
+    const complementoLogradouroLocatario = document.getElementById('complemento_locatario');
+    const cidadeLocatario = document.getElementById('cidade_locatario');
+    const estadoLocatario = document.getElementById('estado_locatario');
 
-    const cepRisco = document.getElementById('cep_risco').value;
-    const logradouroRisco = document.getElementById('logradouro_risco').value;
-    const numeroLogradouroRisco = document.getElementById('numero_risco').value;
-    const complementoRisco = document.getElementById('complemento_risco').value;
-    const cidadeRisco = document.getElementById('cidade_risco').value;
-    const estadoRisco = document.getElementById('estado_risco').value;
+    const nomeLocador = document.getElementById('nome_locador');
+    const cpfLocador = document.getElementById('cpf_locador');
+    const emailLocador = document.getElementById('email_locador');
+    const telefoneLocador = document.getElementById('telefone_locador');
+    const cepLocador = document.getElementById('cep_locador');
+    const logradouroLocador = document.getElementById('logradouro_locador');
+    const numeroLogradouroLocador = document.getElementById('numero_locador');
+    const complementoLogradouroLocador = document.getElementById('complemento_locador');
+    const cidadeLocador = document.getElementById('cidade_locador');
+    const estadoLocador = document.getElementById('estado_locador');
 
-    const dataInicioVigencia = document.getElementById('inicioVigencia').value;
-    const dataFimVigencia = document.getElementById('fimVigencia').value;
-    const periodo = document.getElementById('periodoMeses').value;
+    const cepRisco = document.getElementById('cep_imovel');
+    const logradouroRisco = document.getElementById('logradouro_imovel');
+    const numeroLogradouroRisco = document.getElementById('numero_imovel');
+    const complementoRisco = document.getElementById('complemento_imovel');
+    const cidadeRisco = document.getElementById('cidade_imovel');
+    const estadoRisco = document.getElementById('estado_imovel');
 
-    const isAluguel = document.getElementById('valorAluguel').value;
-    const isIptu = document.getElementById('valorIptu').value;
-    const isCondominio = document.getElementById('valorCondominio').value;
-    const isAgua = document.getElementById('valorAgua').value;
-    const isEnergiaEletrica = document.getElementById('valorEnergiaEletrica').value;
-    const isGas = document.getElementById('valorGas').value;
-    const isDanosImovel = document.getElementById('valorDanosImovel').value;
-    const isPinturaInterna = document.getElementById('valorPinturaInterna').value;
-    const isPinturaExterna = document.getElementById('valorPinturaExterna').value;
-    const isMultaRecisoria = document.getElementById('valorMultaRecisoria').value;
+    const dataInicioVigencia = document.getElementById('inicioVigencia');
+    const dataFimVigencia = document.getElementById('fimVigencia');
+    const periodo = document.getElementById('periodoMeses');
+
+    const checkIsIptu = document.getElementById('iptu');
+    const checkIsCondominio = document.getElementById('condominio');
+    const checkIsAgua = document.getElementById('agua');
+    const checkIsEnergiaEletrica = document.getElementById('energia');
+    const checkIsGas = document.getElementById('gas');
+    const checkIsDanosImovel = document.getElementById('danosImovel');
+    const checkIsPinturaInterna = document.getElementById('pinturaInterna');
+    const checkIsPinturaExterna = document.getElementById('pinturaExterna');
+    const checkIsMultaRecisoria = document.getElementById('multaRecisoria');
+
+    const isAluguel = document.getElementById('valorAluguel');
+    const isIptu = document.getElementById('valorIptu');
+    const isCondominio = document.getElementById('valorCondominio');
+    const isAgua = document.getElementById('valorAgua');
+    const isEnergiaEletrica = document.getElementById('valorEnergiaEletrica');
+    const isGas = document.getElementById('valorGas');
+    const isDanosImovel = document.getElementById('valorDanosImovel');
+    const isPinturaInterna = document.getElementById('valorPinturaInterna');
+    const isPinturaExterna = document.getElementById('valorPinturaExterna');
+    const isMultaRecisoria = document.getElementById('valorMultaRecisoria');
+
+    if (!nomeLocatario.checkValidity()) {
+      alert(nomeLocatario.validationMessage);
+      nomeLocatario.focus();
+      return false;
+    }
+
+    if (!cpfLocatario.checkValidity()) {
+      alert(cpfLocatario.validationMessage);
+      cpfLocatario.focus();
+      return false;
+    }
+
+    if (!emailLocatario.checkValidity()) {
+      alert(emailLocatario.validationMessage);
+      emailLocatario.focus();
+      return false;
+    }
+
+    if (!telefoneLocatario.checkValidity()) {
+      alert(telefoneLocatario.validationMessage);
+      telefoneLocatario.focus();
+      return false;
+    }
+
+    if (!logradouroLocatario.checkValidity()) {
+      alert(logradouroLocatario.validationMessage);
+      logradouroLocatario.focus();
+      return false;
+    }
+
+    if (!numeroLogradouroLocatario.checkValidity()) {
+      alert(numeroLogradouroLocatario.validationMessage);
+      numeroLogradouroLocatario.focus();
+      return false;
+    }
+
+    if (!cidadeLocatario.checkValidity()) {
+      alert(cidadeLocatario.validationMessage);
+      cidadeLocatario.focus();
+      return false;
+    }
+
+    if (!estadoLocatario.checkValidity()) {
+      alert(estadoLocatario.validationMessage);
+      estadoLocatario.focus();
+      return false;
+    }
+
+    // Validação dos campos do locador
+    if (!nomeLocador.checkValidity()) {
+      alert(nomeLocador.validationMessage);
+      nomeLocador.focus();
+      return false;
+    }
+
+    if (!cpfLocador.checkValidity()) {
+      alert(cpfLocador.validationMessage);
+      cpfLocador.focus();
+      return false;
+    }
+
+    if (!emailLocador.checkValidity()) {
+      alert(emailLocador.validationMessage);
+      emailLocador.focus();
+      return false;
+    }
+
+    if (!telefoneLocador.checkValidity()) {
+      alert(telefoneLocador.validationMessage);
+      telefoneLocador.focus();
+      return false;
+    }
+
+    if (!cepLocador.checkValidity()) {
+      alert(cepLocador.validationMessage);
+      cepLocador.focus();
+      return false;
+    }
+
+    if (!logradouroLocador.checkValidity()) {
+      alert(logradouroLocador.validationMessage);
+      logradouroLocador.focus();
+      return false;
+    }
+
+    if (!numeroLogradouroLocador.checkValidity()) {
+      alert(numeroLogradouroLocador.validationMessage);
+      numeroLogradouroLocador.focus();
+      return false;
+    }
+
+    if (!cidadeLocador.checkValidity()) {
+      alert(cidadeLocador.validationMessage);
+      cidadeLocador.focus();
+      return false;
+    }
+
+    if (!estadoLocador.checkValidity()) {
+      alert(estadoLocador.validationMessage);
+      estadoLocador.focus();
+      return false;
+    }
+
+    // Validação dos campos do imóvel (risco)
+    if (!cepRisco.checkValidity()) {
+      alert(cepRisco.validationMessage);
+      cepRisco.focus();
+      return false;
+    }
+
+    if (!logradouroRisco.checkValidity()) {
+      alert(logradouroRisco.validationMessage);
+      logradouroRisco.focus();
+      return false;
+    }
+
+    if (!numeroLogradouroRisco.checkValidity()) {
+      alert(numeroLogradouroRisco.validationMessage);
+      numeroLogradouroRisco.focus();
+      return false;
+    }
+
+    if (!cidadeRisco.checkValidity()) {
+      alert(cidadeRisco.validationMessage);
+      cidadeRisco.focus();
+      return false;
+    }
+
+    if (!estadoRisco.checkValidity()) {
+      alert(estadoRisco.validationMessage);
+      estadoRisco.focus();
+      return false;
+    }
+
+    // Validação das datas
+    if (!dataInicioVigencia.checkValidity()) {
+      alert(dataInicioVigencia.validationMessage);
+      dataInicioVigencia.focus();
+      return false;
+    }
+
+    if (!dataFimVigencia.checkValidity()) {
+      alert(dataFimVigencia.validationMessage);
+      dataFimVigencia.focus();
+      return false;
+    }
+
+    // Validação dos valores financeiros
+    if (!isAluguel.checkValidity()) {
+      alert(isAluguel.validationMessage);
+      isAluguel.focus();
+      return false;
+    }
+
+    if (checkIsIptu.checked) {
+      alert(!isIptu.checkValidity());
+      if (!isIptu.checkValidity()) {
+        alert(isIptu.validationMessage);
+        isIptu.focus();
+        return false;
+      }
+    }
+
+    if (checkIsCondominio.checked) {
+      if (!isCondominio.checkValidity()) {
+        alert(isCondominio.validationMessage);
+        isCondominio.focus();
+        return false;
+      }
+    }
+
+    if (checkIsAgua.checked) {
+      if (!isAgua.checkValidity()) {
+        alert(isAgua.validationMessage);
+        isAgua.focus();
+        return false;
+      }
+    }
+
+    if (checkIsEnergiaEletrica.checked) {
+      if (!isEnergiaEletrica.checkValidity()) {
+        alert(isEnergiaEletrica.validationMessage);
+        isEnergiaEletrica.focus();
+        return false;
+      }
+    }
+
+    if (checkIsGas.checked) {
+      if (!isGas.checkValidity()) {
+        alert(isGas.validationMessage);
+        isGas.focus();
+        return false;
+      }
+    }
+
+    if (!isDanosImovel.checkValidity()) {
+      alert(isDanosImovel.validationMessage);
+      isDanosImovel.focus();
+      return false;
+    }
+
+    if (checkIsPinturaInterna.checked) {
+      if (!isPinturaInterna.checkValidity()) {
+        alert(isPinturaInterna.validationMessage);
+        isPinturaInterna.focus();
+        return false;
+      }
+    }
+
+    if (checkIsPinturaExterna.checked) {
+      if (!isPinturaExterna.checkValidity()) {
+        alert(isPinturaExterna.validationMessage);
+        isPinturaExterna.focus();
+        return false;
+      }
+    }
+
+    if (checkIsMultaRecisoria.checked) {
+      if (!isMultaRecisoria.checkValidity()) {
+        alert(isMultaRecisoria.validationMessage);
+        isMultaRecisoria.focus();
+        return false;
+      }
+    }
 
     // Criar o objeto com os dados
     const dados = {
-      Nome_Locatario: nomeLocatario,
-      CPF_Locatario: cpfLocatario,
-      Email_Locatario: emailLocatario,
-      Telefone_Locatario: telefoneLocatario,
-      CEP_Locatario: cepLocatario,
-      Logradouro_Locatario: logradouroLocatario,
-      Numero_Logradouro: numeroLogradouroLocatario,
-      Complemento_Logradouro_Locatario: complementoLogradouroLocatario,
-      Cidade_Locatario: cidadeLocatario,
-      Estado_Locatario: estadoLocatario,
+      Tipo_Seguro: TipoSeguro,
+      tipo_locacao: Tipolocacao,
 
-      Nome_Locador: nomeLocador,
-      CPF_Locador: cpfLocador,
-      Email_Locador: emailLocador,
-      Telefone_Locador: telefoneLocador,
-      CEP_Locador: cepLocador,
-      Logradouro_Locador: logradouroLocador,
-      Numero_Logradouro_Locador: numeroLogradouroLocador,
-      Complemento_Logradouro_Locador: complementoLogradouroLocador,
-      Cidade_Locador: cidadeLocador,
-      Estado_Locador: estadoLocador,
+      Nome_Locatario: nomeLocatario.value,
+      CPF_Locatario: cpfLocatario.value,
+      Email_Locatario: emailLocatario.value,
+      Telefone_Locatario: telefoneLocatario.value,
+      CEP_Locatario: cepLocatario.value,
+      Logradouro_Locatario: logradouroLocatario.value,
+      Numero_Logradouro_Locatario: numeroLogradouroLocatario.value,
+      Complemento_Logradouro_Locatario: complementoLogradouroLocatario.value,
+      Cidade_Locatario: cidadeLocatario.value,
+      Estado_Locatario: estadoLocatario.value,
 
-      CEP_Risco: cepRisco,
-      Logradouro_Risco: logradouroRisco,
-      Numero_Logradouro_Risco: numeroLogradouroRisco,
-      Complemento_Risco: complementoRisco,
-      Cidade_Risco: cidadeRisco,
-      Estado_Risco: estadoRisco,
+      Nome_Locador: nomeLocador.value,
+      CPF_Locador: cpfLocador.value,
+      Email_Locador: emailLocador.value,
+      Telefone_Locador: telefoneLocador.value,
+      CEP_Locador: cepLocador.value,
+      Logradouro_Locador: logradouroLocador.value,
+      Numero_Logradouro_Locador: numeroLogradouroLocador.value,
+      Complemento_Logradouro_Locador: complementoLogradouroLocador.value,
+      Cidade_Locador: cidadeLocador.value,
+      Estado_Locador: estadoLocador.value,
 
-      Data_Inicio_Vigencia: dataInicioVigencia,
-      Data_Fim_Vigencia: dataFimVigencia,
-      Periodo: periodo,
+      CEP_Risco: cepRisco.value,
+      Logradouro_Risco: logradouroRisco.value,
+      Numero_Logradouro_Risco: numeroLogradouroRisco.value,
+      Complemento_Risco: complementoRisco.value,
+      Cidade_Risco: cidadeRisco.value,
+      Estado_Risco: estadoRisco.value,
 
-      IS_Aluguel: isAluguel,
-      IS_IPTU: isIptu,
-      IS_Condominio: isCondominio,
-      IS_Agua: isAgua,
-      IS_Energia_Eletrica: isEnergiaEletrica,
-      IS_Gas: isGas,
-      IS_Danos_Imovel: isDanosImovel,
-      IS_Pintura_Interna: isPinturaInterna,
-      IS_Pintura_Externa: isPinturaExterna,
-      IS_Multa_Recisoria: isMultaRecisoria
+      Data_Inicio_Vigencia: dataInicioVigencia.value,
+      Data_Fim_Vigencia: dataFimVigencia.value,
+      Periodo: periodo.value,
+
+      IS_Aluguel: isAluguel.value,
+      IS_IPTU: isIptu.value,
+      IS_Condominio: isCondominio.value,
+      IS_Agua: isAgua.value,
+      IS_Energia_Eletrica: isEnergiaEletrica.value,
+      IS_Gas: isGas.value,
+      IS_Danos_Imovel: isDanosImovel.value,
+      IS_Pintura_Interna: isPinturaInterna.value,
+      IS_Pintura_Externa: isPinturaExterna.value,
+      IS_Multa_Recisoria: isMultaRecisoria.value
     };
+
+    console.log(JSON.stringify(dados));
 
     // Fazer a requisição POST
     fetch('http://127.0.0.1:5000/nova_cotacao', {
