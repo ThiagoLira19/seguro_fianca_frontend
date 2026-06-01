@@ -16,3 +16,7 @@
     background-color: #f8f9fa;
 }
 
+#btn-enviar{
+    background-color: #0567a0; /* Fundo azul para o botão ativo */
+    color: #ffffff; /* Texto branco para o botão ativo */
+}
