@@ -30,8 +30,8 @@
       <!-- NAV -->
       <div class="d-flex gap-4 px-4 py-3 nav-top border-bottom small">
           <div class="container d-flex gap-4">
-            <div class="nav-item active"><a href="">LOCAÇÃO RESIDENCIAL</a></div>
-            <div class="nav-item"><a href="simulador"> LOCAÇÃO COMERCIAL</a></div>
+            <a href=""><div class="nav-item active">LOCAÇÃO RESIDENCIAL</div></a>
+            <a href="cotador_comercial.html"><div class="nav-item">LOCAÇÃO COMERCIAL</div></a>
           </div>
       </div>
 
@@ -51,15 +51,18 @@
           <div class="col step">4. Confirmação</div>
         </div>
 
+        <input type="hidden" name="Tipo_Seguro" id="Tipo_Seguro" value="NB">
+        <input type="hidden" name="tipo_locacao" id="tipo_locacao" value="RESIDENCIAL">
+
         <!-- FORM -->
         <div class="mb-4">
           <div class="section-title mb-3">Dados do locatário</div>
           <div class="row g-3">
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="CPF do locatário" id="cpf_locatario">
+              <input type="text" class="form-control" placeholder="Nome completo" id="nome_locatario" required>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Nome completo" id="nome_locatario">
+              <input type="text" class="form-control" placeholder="CPF do locatário" id="cpf_locatario" required>
             </div>
           </div>
         </div>
@@ -67,10 +70,10 @@
         <div class="mb-4">
           <div class="row g-3">
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="E-mail do locatário" id="email_locatario">
+              <input type="email" class="form-control" placeholder="E-mail do locatário" id="email_locatario" required>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Telefone do locatário" id="telefone_locatario">
+              <input type="text" class="form-control" placeholder="Telefone do locatário" id="telefone_locatario" required>
             </div>
           </div>
         </div>
@@ -78,13 +81,13 @@
         <div class="mb-4">
           <div class="row g-3">
             <div class="col-md-4">
-              <input type="number" class="form-control" placeholder="CEP do locatário" id="cep_locatario" onblur="buscarEnderecoLocatario()">
+              <input type="number" class="form-control" placeholder="CEP do locatário" id="cep_locatario" onblur="buscarEnderecoLocatario()" required>
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_locatario" disabled>
+              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_locatario" disabled required>
             </div>
             <div class="col-md-4">
-              <input type="number" class="form-control" placeholder="Número do locatário" id="numero_locatario">
+              <input type="number" class="form-control" placeholder="Número do locatário" id="numero_locatario" required>
             </div>
           </div>
         </div>
@@ -95,10 +98,10 @@
               <input type="text" class="form-control" placeholder="Complemento logradouro" id="complemento_locatario">
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Cidade do locatário" id="cidade_locatario" disabled>
+              <input type="text" class="form-control" placeholder="Cidade do locatário" id="cidade_locatario" disabled required>
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Estado do locatário" id="estado_locatario" disabled>
+              <input type="text" class="form-control" placeholder="Estado do locatário" id="estado_locatario" disabled required>
             </div>
           </div>
         </div>
@@ -109,33 +112,33 @@
           <!-- Primeiro Grupo -->
           <div class="row g-3 mb-3">
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="CPF do locador" id="cpf_locador">
+              <input type="text" class="form-control" placeholder="Nome completo" id="nome_locador" required>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Nome completo" id="nome_locador">
+              <input type="text" class="form-control" placeholder="CPF do locador" id="cpf_locador" required>
             </div>
           </div>
 
           <!-- Segundo Grupo -->
           <div class="row g-3 mb-3">
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="E-mail do locador" id="email_locador">
+              <input type="email" class="form-control" placeholder="E-mail do locador" id="email_locador" required>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Telefone do locador" id="telefone_locador">
+              <input type="text" class="form-control" placeholder="Telefone do locador" id="telefone_locador" required>
             </div>
           </div>
 
           <!-- Terceiro Grupo -->
           <div class="row g-3 mb-3">
             <div class="col-md-4">
-              <input type="number" class="form-control" placeholder="CEP do locador" id="cep_locador" onblur="buscarEnderecoLocador()">
+              <input type="number" class="form-control" placeholder="CEP do locador" id="cep_locador" onblur="buscarEnderecoLocador()" required>
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_locador" disabled>
+              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_locador" disabled required>
             </div>
             <div class="col-md-4">
-              <input type="number" class="form-control" placeholder="Número do locador" id="numero_locador">
+              <input type="number" class="form-control" placeholder="Número do locador" id="numero_locador" required>
             </div>
           </div>
 
@@ -145,10 +148,10 @@
               <input type="text" class="form-control" placeholder="Complemento logradouro" id="complemento_locador">
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Cidade do locador" id="cidade_locador" disabled>
+              <input type="text" class="form-control" placeholder="Cidade do locador" id="cidade_locador" disabled required>
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Estado do locador" id="estado_locador" disabled>
+              <input type="text" class="form-control" placeholder="Estado do locador" id="estado_locador" disabled required>
             </div>
           </div>
         </div>
@@ -159,13 +162,13 @@
           <!-- Primeiro Grupo -->
           <div class="row g-3 mb-3">
             <div class="col-md-4">
-              <input type="number" class="form-control" placeholder="CEP" id="cep_imovel" onblur="buscarEnderecoImovel()">
+              <input type="number" class="form-control" placeholder="CEP" id="cep_imovel" onblur="buscarEnderecoImovel()" required>
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_imovel" disabled>
+              <input type="text" class="form-control" placeholder="Logradouro" id="logradouro_imovel" disabled required>
             </div>
             <div class="col-md-4">
-              <input type="number" class="form-control" placeholder="Número do imóvel" id="numero_imovel">
+              <input type="number" class="form-control" placeholder="Número do imóvel" id="numero_imovel" required>
             </div>
           </div>
 
@@ -175,10 +178,10 @@
               <input type="text" class="form-control" placeholder="Complemento logradouro" id="complemento_imovel">
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Cidade do Imóvel" id="cidade_imovel" disabled>
+              <input type="text" class="form-control" placeholder="Cidade do Imóvel" id="cidade_imovel" disabled required>
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Estado do Imóvel" id="estado_imovel" disabled>
+              <input type="text" class="form-control" placeholder="Estado do Imóvel" id="estado_imovel" disabled required>
             </div>
           </div>
 
@@ -187,11 +190,11 @@
             <div class="col-md-6">
               <div class="input-group">
                 <span class="input-group-text">R$</span>
-                <input type="text" class="form-control currency" placeholder="Valor do aluguel" id="valorAluguel">
+                <input type="text" class="form-control currency" placeholder="Valor do aluguel" id="valorAluguel" required>
               </div>
             </div>
             <div class="col-md-6">
-              <input type="number" class="form-control" placeholder="Período do aluguel (em meses)" id="periodoMeses">
+              <input type="number" class="form-control" placeholder="Período do aluguel (em meses)" id="periodoMeses" required>
             </div>
           </div>
         </div>
@@ -200,10 +203,10 @@
           <div class="section-title mb-3">Inicio da Vigência</div>
           <div class="row g-3 mb-3">
             <div class="col-md-6">
-              <input type="date" class="form-control" id="inicioVigencia">
+              <input type="date" class="form-control" id="inicioVigencia" required>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Fim da vigência" id="fimVigencia" disabled>
+              <input type="text" class="form-control" placeholder="Fim da vigência" id="fimVigencia" disabled required>
             </div>
           </div>
         </div>
@@ -217,7 +220,7 @@
     <!-- Checkbox -->
     <div class="col-12 col-md-3">
       <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="danosImovel" value="danosImovel">
+        <input type="checkbox" class="form-check-input" id="danosImovel" value="danosImovel" checked disabled>
         <label class="form-check-label" for="danosImovel">Danos ao Imóvel</label>
       </div>
     </div>
@@ -225,7 +228,7 @@
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorDanosImovel">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorDanosImovel" value="0,00" required>
       </div>
     </div>
   </div>
@@ -240,7 +243,7 @@
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorIptu">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorIptu" value="0,00" >
       </div>
     </div>
   </div>
@@ -255,7 +258,7 @@
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorCondominio">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorCondominio" value="0,00" >
       </div>
     </div>
   </div>
@@ -270,7 +273,7 @@
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorAgua">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorAgua" value="0,00" >
       </div>
     </div>
   </div>
@@ -285,7 +288,7 @@
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorEnergia">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorEnergiaEletrica" value="0,00" >
       </div>
     </div>
   </div>
@@ -300,7 +303,7 @@
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorGas">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorGas" value="0,00" >
       </div>
     </div>
   </div>
@@ -308,14 +311,14 @@
   <div class="row mb-3 align-items-center">
     <div class="col-12 col-md-3">
       <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="pinturaInterna" value="pinturaInterna">
+        <input type="checkbox" class="form-check-input" id="pinturaInterna" value="pinturaInterna" value="0,00" >
         <label class="form-check-label" for="pinturaInterna">Pintura Interna</label>
       </div>
     </div>
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorPinturaInterna">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorPinturaInterna" value="0,00" >
       </div>
     </div>
   </div>
@@ -330,7 +333,7 @@
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorPinturaExterna">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorPinturaExterna" value="0,00" >
       </div>
     </div>
   </div>
@@ -345,7 +348,7 @@
     <div class="col-12 col-md-4">
       <div class="input-group">
         <span class="input-group-text">R$</span>
-        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorMultaRecisoria">
+        <input type="text" class="form-control currency" placeholder="Importância segurada" id="valorMultaRecisoria" value="0,00" >
       </div>
     </div>
   </div>
