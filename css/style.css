@@ -198,3 +198,9 @@
               background-color: #0567a0; /* Fundo azul para o botão ativo */
               color: #ffffff; /* Texto branco para o botão ativo */
           }
+
+            .custom-center {
+    text-align: center; /* Centraliza o texto */
+  }
+
+
