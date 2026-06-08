@@ -61,7 +61,7 @@
 
                 row.innerHTML = `
                     <td>${index + 1}</td>
-                    <td>${cotacao.data_hora_cotacao}</td>
+                    <td>${formatarData(cotacao.data_hora_cotacao)}</td>
                     <td>${cotacao.numero_cotacao}</td>
                     <td>${cotacao.nome_locador}</td>
                     <td>${cotacao.nome_locatario}</td>
